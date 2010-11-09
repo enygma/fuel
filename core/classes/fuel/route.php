@@ -26,7 +26,7 @@ class Fuel_Route {
 	public static function parse($uri)
 	{
 		// This handles the default route
-		if ($uri->uri == '')
+		if ($uri == '')
 		{
 			if ( ! isset(Route::$routes['default']) || Route::$routes['default'] == '')
 			{
@@ -42,15 +42,15 @@ class Fuel_Route {
 		foreach (Route::$routes as $search => $route)
 		{
 			$search = str_replace(array(':any', ':segment'), array('.+', '[^/]+'), $search);
-			if (preg_match('#'.$search.'#uD', $uri->uri) != false)
+			if (preg_match('#'.$search.'#uD', $uri) != false)
 			{
 				// TODO: Write the advanced routing.
-				$route = preg_replace('#'.$search.'#uD', $route, $uri->uri);
+				$route = preg_replace('#'.$search.'#uD', $route, $uri);
 				return Route::parse_match($route);
 			}
 		}
 		
-		return Route::parse_match($uri->uri);
+		return Route::parse_match($uri);
 	}
 	
 	/**
