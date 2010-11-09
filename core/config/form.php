@@ -7,17 +7,18 @@
 | These tags will wrap the different elements in the form.
 |
 | Example:
-| 'form_wrapper_open']	= '<ul>';
-| 'form_wrapper_close']	= '</ul>';
 |
-| 'input_wrapper_open']	= '<li>';
-| 'input_wrapper_close']	= '</li>';
+| 'form_wrapper_open'	=> '<ul>',
+| 'form_wrapper_close'	=> '</ul>',
 |
-| 'label_wrapper_open']	= '<label for="%s">';
-| 'label_wrapper_close']	= '</label>';
+| 'input_wrapper_open'	=> '<li>',
+| 'input_wrapper_close'	=> '</li>',
 |
-| 'required_location']	= 'after';
-| 'required_tag']		= '<span class="required">*</span>';
+| 'label_wrapper_open'	=> '<label for="%s">',
+| 'label_wrapper_close'	=> '</label>',
+|
+| 'required_location'	=> 'after',
+| 'required_tag'		=> '<span class="required">*</span>',
 |
 | Would result in the following form:
 | <form action="" method="post">

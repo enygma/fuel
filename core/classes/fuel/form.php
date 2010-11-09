@@ -57,7 +57,7 @@ class Fuel_Form
 	 * @param   array   array of values
 	 * @return  void
 	 */
-	public static function init()
+	public static function _init()
 	{
 		// Load for the first time
 		if (empty(self::$initialized))
