@@ -14,7 +14,7 @@
 
 namespace Fuel\Core;
 
-use Fuel\App as App;
+
 
 class Config {
 
@@ -34,24 +34,24 @@ class Config {
 		{
 			$config = $file;
 		}
-		elseif ($paths = App\Fuel::find_file('config', $file, '.php', true))
+		elseif ($paths = \Fuel::find_file('config', $file, '.php', true))
 		{
 			// Reverse the file list so that we load the core configs first and
 			// the app can override anything.
 			$paths = array_reverse($paths);
 			foreach ($paths as $path)
 			{
-				$config = App\Fuel::load($path) + $config;
+				$config = \Fuel::load($path) + $config;
 			}
 		}
 		if ($group === null)
 		{
-			static::$items = static::$items + $config;
+			static::$items = $reload ? $config : static::$items + $config;
 		}
 		else
 		{
 			$group = ($group === true) ? $file : $group;
-			if ( ! isset(static::$items[$group]))
+			if ( ! isset(static::$items[$group]) or $reload)
 			{
 				static::$items[$group] = array();
 			}

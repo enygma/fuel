@@ -12,8 +12,8 @@
  * @link		http://fuelphp.com
  */
 
-namespace Fuel\Auth;
-use Fuel\App;
+namespace Auth;
+
 
 abstract class Auth_Driver {
 
@@ -31,7 +31,7 @@ abstract class Auth_Driver {
 
 	public static function factory(Array $config = array())
 	{
-		throw new App\Auth_Exception('Driver must have a factory method extension.');
+		throw new Auth\Auth_Exception('Driver must have a factory method extension.');
 	}
 
 	/**

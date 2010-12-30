@@ -12,9 +12,9 @@
  * @link		http://fuelphp.com
  */
 
-namespace Fuel\Auth;
-use Fuel\App;
+namespace Auth;
 
-class Auth_Exception extends App\Exception { }
+
+class Auth_Exception extends \Exception { }
 
 // End of file exception.php

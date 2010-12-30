@@ -1,10 +1,8 @@
 <?php
-
-namespace Fuel\App\Controller;
-
-class Welcome extends Controller\Base {
-
-	public $default_action = 'index';
+/**
+ * An example Controller.  This shows the most basic usage of a Controller.
+ */
+class Controller_Welcome extends Controller {
 
 	public function action_index()
 	{
